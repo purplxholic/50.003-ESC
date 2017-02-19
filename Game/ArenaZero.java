@@ -85,6 +85,21 @@ public class ArenaZero {
 		System.out.println("Your current health is: " + playerHealth);
 		
 	}
+	public String getName(){
+		return userName;
+	}
+	
+	public int getID(){
+		return ID; 
+	}
+	
+	public int getX(){
+		return coordinates.get("X");
+	}
+	
+	public int getY(){
+		return coordinates.get("Y"); 
+	}
 }
 
 interface Weapon{
@@ -92,6 +107,7 @@ interface Weapon{
 	public int damage=0; 
 	public String getName();
 	public int setDamage(); 
+	public String toString();
 }
 
 class Sword implements Weapon{
@@ -103,7 +119,10 @@ class Sword implements Weapon{
 	public int setDamage(){
 		return damage; 
 	}
-	
+	@Override
+	public String toString(){
+		return "Sword";
+	}
 }
 class Gun implements Weapon{
 	public String weaponName="Gun";
@@ -114,6 +133,10 @@ class Gun implements Weapon{
 	}
 	public int setDamage(){
 		return damage;
+	}
+	@Override
+	public String toString(){
+		return "Gun";
 	}
 	
 }
